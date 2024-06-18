@@ -1,42 +1,167 @@
+@font-face {
+  font-family: 'Digital';
+/*   src: url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot'); */
+  src: url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix')
+      format('embedded-opentype'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2')
+      format('woff2'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff')
+      format('woff'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf')
+      format('truetype'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7')
+      format('svg');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+/*   padding: 0; */
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://getwallpapers.com/wallpaper/full/b/c/7/384884.jpg");
+  background-size: cover;
+/*   background-repeat: no-repeat; */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#displays {
+  border: 5px solid rgb(17, 49, 59);
+  background-color: rgb(17, 49, 59);
+  width: calc(10vh * 5);
+/*   margin: auto; */
+  padding: .2rem .2rem 0 .2rem;
+  text-align: right;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-family: digital;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+.button-board {
+  font-size: calc(1vh * 3.5);
+  border: 2px solid rgb(17, 49, 59);
+  width: calc(10vh * 5);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: calc(1vh * 10);
+  gap: .3rem;
+  background-color: rgba(17, 49, 59, .8);
+  padding: .3rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-family: sans-serif;
+}
+
+.button-board div {
+  border: 1px solid rgb(17, 49, 59);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+}
+
+.button-board div:hover {
+/*   scale: 1.1; */
+  box-shadow: inset 0 0 4px black;
+}
+
+.button-board div:active {
+  box-shadow: inset 0 0 8px black;
+}
+
+#clear {
+  grid-column: span 2;
+  border-radius: 13px;
+  background-color: tomato;
+  color: white;
+}
+
+#equals {
+  grid-row: span 2;
+  border-radius: 13px;
+  background-color: DarkTurquoise;
+  color: white;
+}
+
+#zero {
+  grid-column: span 2;
+  border-radius: 13px;
+}
+
+#formula-display {
+  width: 100%;
+  overflow-wrap: break-word;
+  color: darkorange;
+  font-size: calc(1vh * 3.5);
+}
+
+#display {
+  color: MintCream;
+  font-size: calc(1vh * 4.5);
+}
+
+.button {
+  background-color: wheat;
+}
+
+.func-button {
+  background-color: Khaki;
+}
+
+.toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 24px;
+}
+
+#toggle {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.slider {
+  background-color: wheat;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  transition: .4s;
+}
+
+.slider:before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: rgb(17, 49, 59);
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: SteelBlue;
+}
+
+input:checked + .slider:before {
+  background-color: black;
+  translate: 20px;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+} */
