@@ -1,0 +1,11 @@
+add "Try me" or something under toggle to get attention
+
+change yellow button color to something else
+
+add more of a border to the calculator?
+
+css color variables
+
+split function into own component files
+
+make display stay same size when showing "hit digit limit"

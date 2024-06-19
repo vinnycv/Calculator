@@ -143,7 +143,7 @@ function App() {
     const buttonBoard = document.getElementsByClassName('button-board')[0];
     const buttons = document.getElementsByClassName('button');
     const fbuttons = document.getElementsByClassName('func-button');
-    console.log(fbuttons);
+    console.log('in');
     if (toggle.checked === true) {
       console.log("checked");
       root.style.backgroundImage = 'url(https://getwallpapers.com/wallpaper/full/b/a/0/365455.jpg)';
@@ -246,7 +246,7 @@ function Toggle({ changeColor }) {
   return (
     <label for="toggle" className="toggle" onClick={(e) => {
       e.stopPropagation();
-      changeColor;
+      changeColor();
     }
     }>
       <input id="toggle" type="checkbox" />
